@@ -1,0 +1,18 @@
+{
+    "contacts": "Contacts",
+    "projects": "Projects",
+    "home": "Home",
+    "mainTitle": " Hello, my name is Leonid Chernyshov and I'm a front-end developer" ,
+    "description" : "I am proficient in HTML, CSS, SCSS, Styled Components, Gulp, JavaScript, and jQuery. I have experience in developing responsive websites on WordPress. Currently, I am learning React, and this portfolio is built using it. My skills encompass creating modern, functional, and interactive web products focused on user and business needs.",
+    "feedback" : "feedback",
+    "ticTacTitle": "If you bored",
+    "primeTitle": "I want to share one of the projects I worked on using HTML, SCSS, JS, and Gulp.",
+    "formTitle":"Complete the form",
+    "formTitleIncorrect" : "Please complete all fields",
+    "incorrectEmail":"Email is incorrect",
+    "companyNamePlaceholder":"Company Name",
+    "descriptionTwo" : "I am looking for an opportunity to work and learn in a team to gain experience in writing clean and correct code every day. The IT field interests me not only as a way to earn money but also because everything related to computers has fascinated me since childhood. I have experience in selecting and assembling PC components and repairing them, so at some point, I realized I wanted to learn more, something new, and started learning Front-end development." ,
+    "opinion":"Your opinion",
+    "sendMessage":"Send feedback",
+    "currency": "Currency"
+}

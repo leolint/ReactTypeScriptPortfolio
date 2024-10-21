@@ -1,0 +1,76 @@
+.footer{
+    width: 100%;
+    background-color: #1f2326;
+}
+
+.light {
+    background-color: #d3d0cc;
+}
+
+.wrapper {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width:800px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+.gmail {
+    font-size: 30px;
+    text-decoration: none;
+    color: #d3d0cc;
+}
+
+.buttons_wrapper{
+    @media (max-width:700px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.button{
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    margin: 0px 20px 0px 20px;
+    border: 3px #d3d0cc solid;
+    color: #d3d0cc;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.2s ease;
+    cursor: pointer;
+    @media (max-width:700px) {
+        margin: 10px 20px 10px 20px;
+    }
+}
+
+.button_light {
+    color: #1f2326;
+    background-color: #d3d0cc;
+    border: 3px #1f2326 solid;
+}
+
+.button_light:hover {
+    color: #d3d0cc !important;
+    background-color: #1f2326 !important;
+    border: 3px #1f2326 solid !important;
+}
+
+.light_text {
+    color: #1f2326;
+}
+
+
+
+.button:hover{
+    background-color: #d3d0cc;
+    border: 3px #d3d0cc solid;
+    color: #1f2326;
+    transition: 0.2s ease;
+}
