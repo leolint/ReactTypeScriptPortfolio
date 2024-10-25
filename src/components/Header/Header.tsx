@@ -26,7 +26,7 @@ const Header: React.FC = () => {
   }
   const { t, i18n } = useTranslation()
   const [isMenuActive, setIsMenuActive] = useState<boolean>(true);
-  const [showContacts, setShowContacts] = useState<boolean>(true);
+  const [showContacts, setShowContacts] = useState<boolean>(false);
 
   function handleContactsClick() {
     setShowContacts(!showContacts);
@@ -34,38 +34,38 @@ const Header: React.FC = () => {
 
   function handleButtonClick() {
     setIsMenuActive(!isMenuActive);
-    setShowContacts(true);
+    setShowContacts(false);
   }
   return (
     <header
-      className={!theme ? styles.header : `${styles.header} ${styles.header_light}`}
+      className={theme ? styles.header : styles.header_light}
     >
       <Container>
         <div className={styles.wrapper}>
-          <div className={!theme ? styles.logo : `${styles.logo} ${styles.logo_light}`}>
+          <div className={theme ? styles.logo : `${styles.logo} ${styles.logo_light}`}>
             <Link to={'/'}>
               <svg>
                 <use href={sprite + "#logo"} />
               </svg>
             </Link>
           </div>
-          <nav className={!theme ? (isMenuActive ? styles.nav : `${styles.nav} ${styles.open}`) : (isMenuActive ? `${styles.nav}` : `${styles.nav} ${styles.header_light} ${styles.open}`) }>
+          <nav className={isMenuActive ? styles.nav : `${styles.nav} ${styles.open}` }>
             <ul className={styles.list}>
               <li
                 onClick={() => handleContactsClick()}
-                className={!theme && !isMenuActive ? styles.list_item : `${styles.list_item} ${styles.light}`}
+                className={theme && !isMenuActive ? styles.list_item : `${styles.list_item} ${styles.light}`}
               >
                 {t("contacts")}
               </li>
               <li
                 onClick={() => handleButtonClick()}
-                className={!theme ? styles.list_item : `${styles.list_item} ${styles.light}`}
+                className={theme ? styles.list_item : `${styles.list_item} ${styles.light}`}
               >
                 <Link to="/projects"> {t("projects")}</Link>
               </li>
               <li
                 onClick={() => handleButtonClick()}
-                className={!theme ? styles.list_item : `${styles.list_item} ${styles.light}`}
+                className={theme ? styles.list_item : `${styles.list_item} ${styles.light}`}
               >
                 <Link to="/">{t("home")}</Link>
               </li>
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
           <div className={styles.buttons_wrapper}>
             <button
               onClick={() => handleButtonClick()}
-              className={!theme ? styles.menuButton : `${styles.menuButton} ${styles.menuButton_light}`
+              className={theme ? styles.menuButton : `${styles.menuButton} ${styles.menuButton_light}`
               }
             >
               <span className={!isMenuActive ? `${styles.redBg} ${styles.spanOneRotate}` : ""}></span>
@@ -82,8 +82,8 @@ const Header: React.FC = () => {
               <span className={!isMenuActive ? styles.redBg : ""}></span>
             </button>
             <div>
-              <button className={!theme ? styles.lng_button : `${styles.lng_button} ${styles.light}`} onClick={() => changeLanguage("ua")}>UA</button>
-              <button className={!theme ? styles.lng_button : `${styles.lng_button} ${styles.light}`} onClick={() => changeLanguage("en")}>En</button>
+              <button className={theme ? styles.lng_button : `${styles.lng_button} ${styles.light}`} onClick={() => changeLanguage("ua")}>UA</button>
+              <button className={theme ? styles.lng_button : `${styles.lng_button} ${styles.light}`} onClick={() => changeLanguage("en")}>En</button>
             </div>
             <ThemeButton />
           </div>

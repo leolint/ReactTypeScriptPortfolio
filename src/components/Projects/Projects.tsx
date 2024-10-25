@@ -25,7 +25,7 @@ const Projects = () => {
   return (
     <ReactFullpage
       navigation={true}
-      sectionsColor={!theme ? ["#ff5f45", "#435b71", "#ff5f45"] : ["#ffb6c1" , "#add8e6" , "#ffb6c1"]}
+      sectionsColor={theme ? ["#ff5f45", "#435b71", "#ff5f45"] : ["#ffb6c1" , "#add8e6" , "#ffb6c1"]}
       credits={{ enabled: false }}
       render={({ state, fullpageApi }) => {
         return (

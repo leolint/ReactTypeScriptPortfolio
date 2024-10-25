@@ -19,23 +19,16 @@ const Footer = () => {
   const location = useLocation()
   const path = location.pathname
   
-  let btnClass = styles.button;
-  let linkClass = styles.gmail;
-  let containerClassname = styles.footer;
-  if (theme) {
-    btnClass = `${styles.button} ${styles.button_light}`;
-    linkClass = `${styles.gmail} ${styles.light_text}`;
-    containerClassname = `${styles.footer} ${styles.light}`;
-  }
+
 
   return (
-    <footer className={containerClassname}>
+    <footer className={theme ? styles.footer : styles.footer_lightTheme}>
       <Container>
         <div className={styles.wrapper}>
-          <a className={linkClass} target="_blank" href="mailto:liolintelion@gmail.com?subject=React%20Dev&body=Текст%20повідомлення">liolintelion@gmail.com</a>
+          <a className={theme ? styles.gmail : styles.gmail_lightTheme} target="_blank" href="mailto:liolintelion@gmail.com?subject=React%20Dev&body=Текст%20повідомлення">liolintelion@gmail.com</a>
           <div className={styles.buttons_wrapper}>
-            {path === '/form' ? null : <Link to="/form"><button className={btnClass}>{t("feedback")}</button></Link>}
-            <a target="_blank" href="https://github.com/leolint"><button className={btnClass}>GitHub</button></a>
+            {path === '/form' ? null : <Link to="/form"><button className={theme ? styles.button : styles.button_lightTheme}>{t("feedback")}</button></Link>}
+            <a target="_blank" href="https://github.com/leolint"><button className={theme ? styles.button : styles.button_lightTheme}>GitHub</button></a>
           </div>
         </div>
       </Container>

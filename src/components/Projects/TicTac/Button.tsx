@@ -12,6 +12,10 @@ const Button: React.FC<ButtonProps> = ({ wrapperCounter , isWinner  }) => {
   const [buttonInner, setButtonInner] = useState<string>("");
   const [active , setActive] = useState<boolean>(false)
 
+  ///BUTTON CLASSES
+  const activeButtonClass = !active ? styles.ticTac_button : `${styles.ticTac_button} ${ styles.ticTac_button_active}`
+  const activeButtonLightThemeClass = !active ? styles.ticTac_button_light : `${styles.ticTac_button_light} ${ styles.ticTac_button_active}`
+
   const themeContext = useContext(MyTheme);
 
   if (!themeContext) {
@@ -34,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({ wrapperCounter , isWinner  }) => {
   };
     
   
-  return <button className={!theme ? (!active ? styles.ticTac_button : `${styles.ticTac_button} ${ styles.ticTac_button_active}`) : (!active ? styles.ticTac_button_light : `${styles.ticTac_button_light} ${ styles.ticTac_button_active}`)} onClick={handleClick}>{buttonInner}</button>;
+  return <button className={theme ? activeButtonClass : activeButtonLightThemeClass} onClick={handleClick}>{buttonInner}</button>;
 };
 
 export default Button;

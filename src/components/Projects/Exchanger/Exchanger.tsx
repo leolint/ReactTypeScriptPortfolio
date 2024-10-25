@@ -18,9 +18,16 @@ const Exchanger: React.FC = () => {
   const [firstSelect, setFirstSelect] = useState<string>("");
   const [secondSelect, setSecondSelect] = useState<string>("");
 
-  function reverseCurrences () {
-    setFirstSelect(secondSelect)
-    setSecondSelect(firstSelect)
+  async function awaitData() {
+    const response = await fetchData();
+    const dataArray: CurrencyData[] = [];
+
+    await response.forEach((item) => {
+      dataArray.push(item)
+    });
+
+    setData(dataArray);
+    setLoading(false);
   }
 
 
@@ -34,32 +41,11 @@ const Exchanger: React.FC = () => {
   function handleScondSelect(event: ChangeEvent<HTMLSelectElement>) {
     setSecondSelect(event.target.value);
   }
-  async function awaitData() {
-    const response = await fetchData();
-    const editedArray: CurrencyData[] = [];
 
-    await response.forEach((item) => {
-      switch (item.currence) {
-        case "EUR":
-        case "USD":
-        case "UAH":
-        case "GBP":
-        case "CHF":
-        case "SEK":
-        case "JPY":
-        case "CAD":
-        case "CNY":
-        case "AUD":
-        case "DKK":
-          editedArray.push(item);
-          break;
-        default:
-          break;
-      }
-    });
 
-    setData(editedArray);
-    setLoading(false);
+  function reverseCurrences () {
+    setFirstSelect(secondSelect)
+    setSecondSelect(firstSelect)
   }
 
   function getResult() {

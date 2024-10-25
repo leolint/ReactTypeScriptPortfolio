@@ -3,9 +3,11 @@
     background-color: #1f2326;
 }
 
-.light {
+.footer_lightTheme{
+    width: 100%;
     background-color: #d3d0cc;
 }
+
 
 .wrapper {
     width: 100%;
@@ -20,18 +22,26 @@
     }
 }
 
-.gmail {
-    font-size: 30px;
-    text-decoration: none;
-    color: #d3d0cc;
-}
-
 .buttons_wrapper{
     @media (max-width:700px) {
         display: flex;
         flex-direction: column;
     }
 }
+
+
+.gmail {
+    font-size: 30px;
+    text-decoration: none;
+    color: #d3d0cc;
+}
+
+.gmail_lightTheme {
+    font-size: 30px;
+    text-decoration: none;
+    color: #1f2326;
+}
+
 
 .button{
     width: 200px;
@@ -50,27 +60,36 @@
     }
 }
 
-.button_light {
-    color: #1f2326;
-    background-color: #d3d0cc;
-    border: 3px #1f2326 solid;
-}
-
-.button_light:hover {
-    color: #d3d0cc !important;
-    background-color: #1f2326 !important;
-    border: 3px #1f2326 solid !important;
-}
-
-.light_text {
-    color: #1f2326;
-}
-
-
-
 .button:hover{
     background-color: #d3d0cc;
     border: 3px #d3d0cc solid;
     color: #1f2326;
     transition: 0.2s ease;
 }
+
+.button_lightTheme {
+    width: 200px;
+    height: 40px;
+    background-color: #d3d0cc;
+    margin: 0px 20px 0px 20px;
+    border: 3px #1f2326 solid;
+    color: #1f2326;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.2s ease;
+    cursor: pointer;
+    @media (max-width:700px) {
+        margin: 10px 20px 10px 20px;
+    }  
+}
+
+.button_lightTheme:hover {
+    color: #d3d0cc !important;
+    background-color: #1f2326 !important;
+    border: 3px #1f2326 solid !important;
+}
+
+
+
+

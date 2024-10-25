@@ -59,7 +59,7 @@ const Form = () => {
   }
 
   return (
-    <form className={!theme ? styles.form : `${styles.form} ${styles.form_light}`} action="">
+    <form className={theme ? styles.form : `${styles.form} ${styles.form_light}`} action="">
       {!isEmpty ? <div className={styles.title}>{t("formTitleIncorrect")}</div> : `${t("formTitle")}`}
       {!emailIsCorrect ? <div className={styles.title}>{t("incorrectEmail")}</div> : ""}
       <input

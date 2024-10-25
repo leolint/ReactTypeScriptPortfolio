@@ -11,9 +11,13 @@ const Home = () => {
 
   const themeContext = useContext(MyTheme);
 
+  const spriteImagesIDs = ["#html-icon", "#css-icon", "#git-icon", "#js-icon", "#react-icon", "#gulp-icon", "#wp-icon"]
+
   if (!themeContext) {
     throw new Error('ThemedComponent must be used within a ThemeProvider');
   }
+
+  console.log(sprite);
 
   const { theme, setTheme } = themeContext;
 
@@ -21,7 +25,7 @@ const Home = () => {
   return (
     <ReactFullpage
       navigation={true}
-      sectionsColor={!theme ? ["#ff5f45", "#435b71", "#ff5f45"] : ["#ffb6c1" , "#add8e6" , "#ffb6c1"]}
+      sectionsColor={theme ? ["#ff5f45", "#435b71", "#ff5f45"] : ["#ffb6c1", "#add8e6", "#ffb6c1"]}
       credits={{ enabled: false }}
       render={({ state, fullpageApi }) => {
         return (
@@ -42,51 +46,20 @@ const Home = () => {
                     {t("description")}
                   </h2>
                   <div className={styles.line}>
+
                     <div className={styles.technologies}>
-                      <svg>
-                        <use href={sprite + "#html-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#css-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#git-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#js-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#react-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#gulp-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#wp-icon"} />
-                      </svg>
+                      {spriteImagesIDs.map((imgID: string, index: number) => (
+                        <svg key={index}>
+                          <use href={sprite + imgID} />
+                        </svg>
+                      ))}
                     </div>
                     <div className={styles.technologies}>
-                      <svg>
-                        <use href={sprite + "#html-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#css-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#git-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#js-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#react-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#gulp-icon"} />
-                      </svg>
-                      <svg>
-                        <use href={sprite + "#wp-icon"} />
-                      </svg>
+                    {spriteImagesIDs.map((imgID: string, index: number) => (
+                        <svg key={index}>
+                          <use href={sprite + imgID} />
+                        </svg>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -95,7 +68,7 @@ const Home = () => {
             <div className="section">
               <div className={styles.section_footer}>
                 <Container>
-                <p className={styles.description}>
+                  <p className={styles.description}>
                     {t("descriptionTwo")}
                   </p>
                 </Container>
